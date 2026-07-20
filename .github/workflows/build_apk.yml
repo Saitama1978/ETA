@@ -26,12 +26,19 @@ jobs:
           flutter-version: '3.22.x'
           channel: 'stable'
 
+      # HAKBANG 1: Awtomatikong bubuo ng android/ folder at gradle setup
+      - name: Re-generate Flutter Project Files
+        run: flutter create . --platforms=android --org=com.renantefullo.navmaster
+
+      # HAKBANG 2: Kukuha ng dependencies
       - name: Install Dependencies
         run: flutter pub get
 
+      # HAKBANG 3: Mag-i-istraktura at mag-bi-build ng APK
       - name: Build APK (Release)
         run: flutter build apk --release
 
+      # HAKBANG 4: I-a-upload ang na-generate na APK
       - name: Upload APK Artifact
         uses: actions/upload-artifact@v4
         with:
