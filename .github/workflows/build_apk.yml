@@ -32,10 +32,6 @@ jobs:
       - name: Install Dependencies
         run: flutter pub get
 
-      # FIX FOR ICON: Awtomatikong papalitan ang Flutter icon gamit ang icon.png mo
-      - name: Generate App Launcher Icons
-        run: flutter pub run flutter_launcher_icons
-
       - name: Build APK (Release)
         run: flutter build apk --release
 
