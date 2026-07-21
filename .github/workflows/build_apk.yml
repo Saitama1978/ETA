@@ -29,6 +29,20 @@ jobs:
       - name: Re-generate Flutter Project Files
         run: flutter create . --platforms=android --project-name eta --org com.renantefullo.navmaster
 
+      # HAKBANG PARA SA ICON: Kina-copy ang icon.png mo papunta sa Android App Launcher Icon folders
+      - name: Overwrite Default Android Launcher Icons
+        run: |
+          mkdir -p android/app/src/main/res/mipmap-hdpi
+          mkdir -p android/app/src/main/res/mipmap-mdpi
+          mkdir -p android/app/src/main/res/mipmap-xhdpi
+          mkdir -p android/app/src/main/res/mipmap-xxhdpi
+          mkdir -p android/app/src/main/res/mipmap-xxxhdpi
+          cp icon.png android/app/src/main/res/mipmap-hdpi/ic_launcher.png
+          cp icon.png android/app/src/main/res/mipmap-mdpi/ic_launcher.png
+          cp icon.png android/app/src/main/res/mipmap-xhdpi/ic_launcher.png
+          cp icon.png android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png
+          cp icon.png android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png
+
       - name: Install Dependencies
         run: flutter pub get
 
