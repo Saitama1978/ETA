@@ -26,12 +26,15 @@ jobs:
           flutter-version: '3.22.x'
           channel: 'stable'
 
-      # FIX: Inilagay ang `--project-name eta` para hindi mag-error kahit uppercase ang repo name
       - name: Re-generate Flutter Project Files
         run: flutter create . --platforms=android --project-name eta --org com.renantefullo.navmaster
 
       - name: Install Dependencies
         run: flutter pub get
+
+      # FIX FOR ICON: Awtomatikong papalitan ang Flutter icon gamit ang icon.png mo
+      - name: Generate App Launcher Icons
+        run: flutter pub run flutter_launcher_icons
 
       - name: Build APK (Release)
         run: flutter build apk --release
