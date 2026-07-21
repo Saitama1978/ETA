@@ -210,7 +210,7 @@ class _HomeScreenState extends State<HomeScreen> {
         child: Padding(
           padding: const EdgeInsets.all(16.0),
           child: Column(
-            crossAxisAlignment: CrossAlignment.stretch,
+            crossAxisAlignment: CrossAxisAlignment.stretch, // Inayos ang typo dito
             children: [
               const Text(
                 "NAVMASTER ETA PRO",
